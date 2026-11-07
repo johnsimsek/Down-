@@ -1,318 +1,1680 @@
-<!doctype html>
-<html lang="tr">
+<!DOCTYPE html>
+<html lang="fi">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Inky Vibes Story Gallery</title>
-  <style>
-    :root{--bg:#0b0d12;--line:rgba(255,255,255,.12);--text:#e6eaf2;--shadow:0 20px 60px rgba(0,0,0,.45);--radius:18px;--accent:#7c3aed;}
-    *{box-sizing:border-box} html,body{height:100%}
-    body{margin:0;background:radial-gradient(1200px 800px at 30% 10%, #1a2140 0%, var(--bg) 45%, #07080b 100%);color:var(--text);
-      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;}
-    .stage{height:100%;display:flex;flex-direction:column;gap:14px;padding:18px;max-width:1100px;margin:0 auto;}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>Inky Vibes Tattoo | Tatuointistudio Kouvola, Kotka & Kymenlaakso</title>
+    <meta name="description" content="Inky Vibes Tattoo on tatuointistudio Kouvolassa, osoitteessa Keskikatu 13. Ammattitaitoinen tatuoija toteuttaa yksilölliset custom-tatuoinnit, realistiset ja mustaharmaat tatuoinnit sekä pienet tatuoinnit, tekstitatuoinnit ja kukkatatuoinnit. Suunnittelemme myös peitetatuoinnit ja vanhojen tatuointien korjaukset tapauskohtaisesti. Palvelemme asiakkaita Kouvolasta, Kotkasta ja koko Kymenlaakson alueelta. Tutustu tatuointigalleriaan, pyydä hinta-arvio ja varaa aika oman tatuointisi toteutukseen. Meiltä saat myös tatuointilahjakortit.">
+    <meta name="author" content="John Simsek">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.inkyvibestattoo.com/">
 
-    .viewer{position:relative;flex:1 1 auto;min-height:320px;border:1px solid var(--line);
-      background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);
-      user-select:none;-webkit-user-select:none;touch-action:pan-y;}
-    .main-img{width:100%;height:100%;object-fit:cover;display:block;background:rgba(0,0,0,.25);transform:translateZ(0);cursor:zoom-in;}
+    <!-- Open Graph / Facebook -->
+    <meta property="og:site_name" content="Inky Vibes Tattoo">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.inkyvibestattoo.com/">
+    <meta property="og:title" content="Inky Vibes Tattoo | Tatuointistudio Kouvola, Kotka & Kymenlaakso">
+    <meta property="og:description" content="Ammattitaitoinen tatuointistudio Kouvolassa, palvellen myös asiakkaita Kotkassa ja muualla Kymenlaaksossa. Custom-tatuoinnit, realistiset mustaharmaat kuvat ja peitetatuoinnit.">
+    <meta property="og:image" content="https://johnsimsek.github.io/Inkyvibes-tattoo-lettering/IMG_2383.JPEG">
+    <meta property="og:image:alt" content="Inky Vibes Tattoo logo">
+    <meta property="og:locale" content="fi_FI">
 
-    .topbar{position:absolute;top:10px;left:10px;right:10px;display:flex;flex-direction:column;gap:10px;pointer-events:none;z-index:10;}
-    .row{display:flex;align-items:center;justify-content:space-between;gap:12px;}
-    .title{display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid var(--line);background:rgba(0,0,0,.35);backdrop-filter:blur(10px);
-      border-radius:999px;pointer-events:auto;max-width:70%;}
-    .dot{width:10px;height:10px;border-radius:99px;background:var(--accent);box-shadow:0 0 0 4px rgba(124,58,237,.18);flex:0 0 auto;}
-    .caption{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:14px;}
-    .actions{display:flex;gap:8px;pointer-events:auto;}
-    .icon-btn{border:1px solid var(--line);background:rgba(0,0,0,.35);color:var(--text);border-radius:12px;padding:10px 12px;cursor:pointer;
-      backdrop-filter:blur(10px);font-size:14px;line-height:1}
-    .icon-btn:active{transform:translateY(1px);} .icon-btn:hover{border-color:rgba(255,255,255,.25);}
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.inkyvibestattoo.com/">
+    <meta name="twitter:title" content="Inky Vibes Tattoo | Tatuointistudio Kouvola, Kotka & Kymenlaakso">
+    <meta name="twitter:description" content="Ammattitaitoinen tatuointistudio Kouvolassa, palvellen myös asiakkaita Kotkassa ja muualla Kymenlaaksossa. Custom-tatuoinnit, realistiset mustaharmaat kuvat ja peitetatuoinnit.">
+    <meta name="twitter:image" content="https://johnsimsek.github.io/Inkyvibes-tattoo-lettering/IMG_2383.JPEG">
 
-    /* Sağ/sol ikon ok */
-    .navbtn{position:absolute;top:50%;transform:translateY(-50%);z-index:9;
-      width:44px;height:44px;border-radius:999px;border:1px solid var(--line);
-      background:rgba(0,0,0,.35);color:var(--text);cursor:pointer;display:grid;place-items:center;
-      backdrop-filter:blur(10px);}
-    .navbtn:hover{border-color:rgba(255,255,255,.25)}
-    .navbtn.left{left:10px}
-    .navbtn.right{right:10px}
-    .navbtn svg{width:22px;height:22px}
-
-    /* Progress bar */
-    .progress{display:flex;gap:6px;padding:0 4px;pointer-events:none;}
-    .progress .seg{height:4px;flex:1;background:rgba(255,255,255,.18);border-radius:99px;overflow:hidden;}
-    .progress .fill{height:100%;width:0%;background:rgba(255,255,255,.9);border-radius:99px;}
-
-    .loader{position:absolute;inset:0;background:linear-gradient(110deg,rgba(255,255,255,.08) 8%,rgba(255,255,255,.14) 18%,rgba(255,255,255,.08) 33%);
-      background-size:200% 100%;animation:shimmer 1.2s linear infinite;opacity:0;pointer-events:none;z-index:7;}
-    .loader.is-on{opacity:1} @keyframes shimmer{to{background-position-x:-200%;}}
-
-    /* ALT THUMBNAILS (İSTEDİĞİN GİBİ) */
-    .thumbs{
-      display:flex;gap:10px;padding:10px;border:1px solid var(--line);border-radius:var(--radius);
-      background:rgba(0,0,0,.28);overflow-x:auto;box-shadow:var(--shadow);
-      -webkit-overflow-scrolling:touch;
+    <!-- Google JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TattooParlor",
+      "name": "Inky Vibes Tattoo",
+      "image": "https://johnsimsek.github.io/Inkyvibes-tattoo-lettering/IMG_2383.JPEG",
+      "@id": "https://www.inkyvibestattoo.com/#studio",
+      "url": "https://www.inkyvibestattoo.com/",
+      "telephone": "+358406886496",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Keskikatu 13",
+        "addressLocality": "Kouvola",
+        "postalCode": "45100",
+        "addressCountry": "FI"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Kouvola" },
+        { "@type": "City", "name": "Kotka" },
+        { "@type": "State", "name": "Kymenlaakso" }
+      ]
     }
-    .thumb{border:1px solid rgba(255,255,255,.14);border-radius:14px;overflow:hidden;width:92px;height:62px;flex:0 0 auto;background:rgba(255,255,255,.06);cursor:pointer;padding:0}
-    .thumb img{width:100%;height:100%;object-fit:cover;display:block;}
-    .thumb.is-active{outline:2px solid rgba(124,58,237,.9);box-shadow:0 0 0 6px rgba(124,58,237,.18);}
+    </script>
 
-    /* LIGHTBOX */
-    .lb{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:9999;padding:16px;}
-    .lb.is-on{display:flex;}
-    .lb-img{max-width:min(1100px,96vw);max-height:92vh;object-fit:contain;border-radius:16px;box-shadow:0 30px 90px rgba(0,0,0,.6);cursor:zoom-out;}
-    .lb-top{position:fixed;left:16px;right:16px;top:16px;display:flex;justify-content:space-between;gap:10px;z-index:10000;}
-    .lb-pill{display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid var(--line);background:rgba(0,0,0,.35);backdrop-filter:blur(10px);
-      border-radius:999px;color:var(--text);font-size:14px;max-width:70vw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-    .lb-close{border:1px solid var(--line);background:rgba(0,0,0,.35);color:var(--text);border-radius:12px;padding:10px 12px;cursor:pointer;backdrop-filter:blur(10px);}
+    <!-- Preconnect for Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
-    .lb-nav{position:fixed;top:50%;transform:translateY(-50%);z-index:10000;width:52px;height:52px;border-radius:999px;border:1px solid var(--line);
-      background:rgba(0,0,0,.35);color:var(--text);cursor:pointer;display:grid;place-items:center;backdrop-filter:blur(10px);}
-    .lb-nav.left{left:16px}
-    .lb-nav.right{right:16px}
+    <!-- Fallback for JavaScript Disabled -->
+    <noscript>
+        <style>
+            #bokeh-overlay { display: none !important; }
+        </style>
+    </noscript>
 
-    @media (max-width:600px){
-      .stage{padding:12px}
-      .navbtn{width:40px;height:40px}
-      .thumb{width:84px;height:56px}
-      .lb-nav{width:46px;height:46px}
-    }
-  </style>
-</head>
-<body>
-  <main class="stage">
-    <section class="viewer" id="viewer">
-      <button class="navbtn left" id="prevIcon" aria-label="Previous">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M15 18l-6-6 6-6"/>
-        </svg>
-      </button>
-      <button class="navbtn right" id="nextIcon" aria-label="Next">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M9 6l6 6-6 6"/>
-        </svg>
-      </button>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-      <img id="mainImg" class="main-img" alt="" />
-
-      <div class="topbar">
-        <div class="progress" id="progress" aria-hidden="true"></div>
-        <div class="row">
-          <div class="title">
-            <span class="dot"></span>
-            <span id="caption" class="caption">Gallery</span>
-          </div>
-          <div class="actions">
-            <button class="icon-btn" id="playPauseBtn" title="Pause/Play">❚❚</button>
-            <button class="icon-btn" id="fsBtn" title="Fullscreen">⛶</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="loader" id="loader" aria-hidden="true"></div>
-    </section>
-
-    <!-- ALT FOTO BAR -->
-    <nav class="thumbs" id="thumbs" aria-label="Thumbnails"></nav>
-  </main>
-
-  <!-- LIGHTBOX -->
-  <div class="lb" id="lb" aria-hidden="true">
-    <div class="lb-top">
-      <div class="lb-pill" id="lbCaption">Gallery</div>
-      <button class="lb-close" id="lbClose" aria-label="Close">✕</button>
-    </div>
-    <button class="lb-nav left" id="lbPrev" aria-label="Previous">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M15 18l-6-6 6-6"/>
-      </svg>
-    </button>
-    <button class="lb-nav right" id="lbNext" aria-label="Next">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M9 6l6 6-6 6"/>
-      </svg>
-    </button>
-    <img class="lb-img" id="lbImg" alt="" />
-  </div>
-
-  <script>
-    // KENDİ FOTO İSİMLERİNİ BURAYA YAZ
-    // Dosya adı yazısı göstermiyoruz: alt yazı sadece caption
-    const IMAGES = [
-      { src: "01.jpg", caption: "Tattoo 01" },
-      { src: "02.jpg", caption: "Tattoo 02" },
-      { src: "03.jpg", caption: "Tattoo 03" },
-      { src: "04.jpg", caption: "Tattoo 04" }
-      // ... devam
-    ];
-
-    const STORY_DURATION = 5500;
-
-    const mainImg = document.getElementById("mainImg");
-    const captionEl = document.getElementById("caption");
-    const thumbsEl = document.getElementById("thumbs");
-    const progressEl = document.getElementById("progress");
-    const loaderEl = document.getElementById("loader");
-    const prevIcon = document.getElementById("prevIcon");
-    const nextIcon = document.getElementById("nextIcon");
-    const playPauseBtn = document.getElementById("playPauseBtn");
-    const fsBtn = document.getElementById("fsBtn");
-    const viewer = document.getElementById("viewer");
-
-    const lb = document.getElementById("lb");
-    const lbImg = document.getElementById("lbImg");
-    const lbCaption = document.getElementById("lbCaption");
-    const lbClose = document.getElementById("lbClose");
-    const lbPrev = document.getElementById("lbPrev");
-    const lbNext = document.getElementById("lbNext");
-
-    let index = 0, playing = true, rafId = null, startTime = performance.now();
-    const segs = [], thumbButtons = [];
-
-    function buildProgress(){
-      progressEl.innerHTML = ""; segs.length = 0;
-      for(let i=0;i<IMAGES.length;i++){
-        const seg=document.createElement("div"); seg.className="seg";
-        const fill=document.createElement("div"); fill.className="fill";
-        seg.appendChild(fill); progressEl.appendChild(seg); segs.push(fill);
-      }
-    }
-
-    function buildThumbs(){
-      thumbsEl.innerHTML=""; thumbButtons.length=0;
-      IMAGES.forEach((img,i)=>{
-        const b=document.createElement("button");
-        b.type="button"; b.className="thumb";
-        b.innerHTML = `<img loading="lazy" alt="" src="${img.src}">`;
-        b.addEventListener("click",()=>goTo(i,true));
-        thumbsEl.appendChild(b); thumbButtons.push(b);
-      });
-    }
-
-    function setActiveThumb(){
-      thumbButtons.forEach((b,i)=>b.classList.toggle("is-active",i===index));
-      const active=thumbButtons[index];
-      if(active) active.scrollIntoView({behavior:"smooth", inline:"center", block:"nearest"});
-    }
-
-    function setProgressBase(){
-      for(let i=0;i<segs.length;i++){
-        if(i<index) segs[i].style.width="100%";
-        else if(i>index) segs[i].style.width="0%";
-      }
-    }
-
-    function showLoader(on){ loaderEl.classList.toggle("is-on",!!on); }
-
-    function loadImage(i){
-      const item=IMAGES[i]; if(!item) return;
-      showLoader(true);
-      const tmp=new Image();
-      tmp.decoding="async";
-      tmp.onload=()=>{
-        mainImg.src=item.src;
-        captionEl.textContent=item.caption||"Gallery";
-        if(lb.classList.contains("is-on")){
-          lbImg.src=item.src;
-          lbCaption.textContent=item.caption||"Gallery";
+        body {
+            background-color: #f5f5f7;
+            background-image:
+                radial-gradient(circle at 15% 50%, rgba(255, 255, 255, 0.9), transparent 50%),
+                radial-gradient(circle at 85% 20%, rgba(230, 230, 230, 0.7), transparent 50%);
+            background-attachment: fixed;
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+            color: #000000;
         }
-        showLoader(false);
-      };
-      tmp.onerror=()=>{
-        captionEl.textContent="Foto yüklenemedi";
-        showLoader(false);
-      };
-      tmp.src=item.src;
 
-      setActiveThumb();
-      setProgressBase();
-    }
+        #glass-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            max-width: 100%;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.95), rgba(40, 40, 40, 0.85), rgba(200, 200, 200, 0.55));
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 0;
+            padding: 16px 24px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            opacity: 1;
+            pointer-events: auto;
+            transition: transform 0.6s ease, opacity 0.4s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+        }
 
-    function goTo(i, resetTimer){
-      index=(i+IMAGES.length)%IMAGES.length;
-      loadImage(index);
-      if(resetTimer){ startTime=performance.now(); tick(); }
-    }
-    function next(reset=true){ goTo(index+1,reset); }
-    function prev(reset=true){ goTo(index-1,reset); }
+        #glass-nav.hidden {
+            display: none !important;
+        }
 
-    function tick(){
-      if(!playing) return;
-      const now=performance.now();
-      const t=Math.min(1,(now-startTime)/STORY_DURATION);
-      if(segs[index]) segs[index].style.width=(t*100).toFixed(2)+"%";
-      if(t>=1){ startTime=now; next(false); }
-      rafId=requestAnimationFrame(tick);
-    }
+        .hamburger {
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
 
-    function play(){
-      if(playing) return;
-      playing=true; playPauseBtn.textContent="❚❚";
-      startTime=performance.now(); tick();
-    }
-    function pause(){
-      if(!playing) return;
-      playing=false; playPauseBtn.textContent="▶";
-      if(rafId) cancelAnimationFrame(rafId); rafId=null;
-    }
-    function togglePlay(){ playing?pause():play(); }
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background-color: #ffffff;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
 
-    function toggleFullscreen(){
-      if(!document.fullscreenElement) viewer.requestFullscreen?.();
-      else document.exitFullscreen?.();
-    }
+        h1.menu-text {
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: 600;
+            opacity: 0.95;
+            letter-spacing: 0.8px;
+            margin: 0;
+            padding: 0;
+            line-height: normal;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+        }
 
-    function openLightbox(){
-      const item=IMAGES[index];
-      lbImg.src=item.src;
-      lbCaption.textContent=item.caption||"Gallery";
-      lb.classList.add("is-on");
-      lb.setAttribute("aria-hidden","false");
-    }
-    function closeLightbox(){
-      lb.classList.remove("is-on");
-      lb.setAttribute("aria-hidden","true");
-    }
+        .header-icon {
+            width: 24px;
+            height: 24px;
+            fill: none;
+            stroke: #ffffff;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            transition: transform 0.2s ease, stroke-width 0.2s ease;
+            cursor: pointer;
+            opacity: 0.85;
+        }
 
-    // events
-    nextIcon.addEventListener("click",()=>next(true));
-    prevIcon.addEventListener("click",()=>prev(true));
-    playPauseBtn.addEventListener("click",togglePlay);
-    fsBtn.addEventListener("click",toggleFullscreen);
+        .header-icon:hover {
+            transform: scale(1.15);
+            stroke-width: 2;
+            opacity: 1;
+        }
 
-    mainImg.addEventListener("click", openLightbox);
-    lbClose.addEventListener("click", closeLightbox);
-    lb.addEventListener("click",(e)=>{ if(e.target===lb) closeLightbox(); });
-    lbImg.addEventListener("click", closeLightbox);
-    lbNext.addEventListener("click",()=>next(true));
-    lbPrev.addEventListener("click",()=>prev(true));
+        #sidebar {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 270px;
+            height: 100vh;
+            background: linear-gradient(150deg, rgba(15, 15, 20, 0.55) 0%, rgba(234, 67, 53, 0.12) 30%, rgba(161, 66, 244, 0.15) 65%, rgba(26, 115, 232, 0.15) 100%);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            z-index: 3500;
+            transition: left 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            padding: 80px 20px 20px 30px;
+            box-shadow: 5px 0 20px rgba(0, 0, 0, 0.3);
+            border-right: 1px solid rgba(255, 255, 255, 0.15);
+        }
 
-    window.addEventListener("keydown",(e)=>{
-      if(e.key==="ArrowRight") next(true);
-      if(e.key==="ArrowLeft") prev(true);
-      if(e.key===" "){ e.preventDefault(); togglePlay(); }
-      if(e.key==="Escape") closeLightbox();
-      if(e.key.toLowerCase()==="f") toggleFullscreen();
-    });
+        #sidebar.open { left: 0; }
 
-    // swipe
-    let touchX=null;
-    viewer.addEventListener("touchstart",(e)=>{ if(e.touches?.length) touchX=e.touches[0].clientX; },{passive:true});
-    viewer.addEventListener("touchend",(e)=>{
-      if(touchX===null) return;
-      const endX=e.changedTouches?.length?e.changedTouches[0].clientX:touchX;
-      const dx=endX-touchX; touchX=null;
-      if(Math.abs(dx)>40){ dx<0 ? next(true) : prev(true); }
-    });
+        #sidebar a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 400;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+            line-height: 1.4;
+        }
 
-    viewer.addEventListener("mouseenter",pause);
-    viewer.addEventListener("mouseleave",play);
+        #sidebar a:hover { color: #cccccc; }
 
-    // start
-    buildProgress();
-    buildThumbs();
-    loadImage(index);
-    startTime=performance.now();
-    tick();
-  </script>
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 32px !important;
+            cursor: pointer;
+            font-weight: 300;
+            margin-bottom: 0 !important;
+            color: #ffffff;
+        }
+
+        #animation-container {
+            height: 200vh;
+            width: 100%;
+            position: relative;
+            background-color: #000000;
+            -webkit-mask-image: none;
+            mask-image: none;
+        }
+
+        .animation-iframe {
+            display: block;
+            width: 100%;
+            height: 100vh;
+            height: 100svh;
+            position: sticky;
+            top: 0;
+            border: none;
+        }
+
+        #bokeh-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            height: 100svh;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            z-index: 50;
+            cursor: pointer;
+            pointer-events: auto;
+            transition: backdrop-filter 0.75s ease-out, -webkit-backdrop-filter 0.75s ease-out, opacity 0.75s ease-out;
+        }
+
+        body.is-scrolled #bokeh-overlay {
+            backdrop-filter: blur(0px);
+            -webkit-backdrop-filter: blur(0px);
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        #gallery-section {
+            opacity: 1;
+            position: relative;
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(15px);
+            padding-top: 60px;
+            padding-bottom: 80px;
+        }
+
+        .gallery-header {
+            width: 100%;
+            text-align: center;
+            padding: 0 20px 20px 20px;
+        }
+
+        .gallery-header img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 10px;
+        }
+
+        .ig-caption {
+            color: #000000;
+            text-align: center;
+            font-size: 26px;
+            font-weight: 300;
+            letter-spacing: 4px;
+            margin: 40px 0 20px 0;
+            opacity: 0.9;
+            text-transform: uppercase;
+        }
+
+        .ig-iframe {
+            width: 100%;
+            height: 85vh;
+            border: none;
+            display: block;
+            position: relative;
+            z-index: 30;
+            margin-bottom: -55vh;
+        }
+
+        .coverup-iframe {
+            width: 100%;
+            height: 50vh;
+            min-height: 400px; 
+            border: none;
+            display: block;
+            margin-top: 0;
+            position: relative;
+            z-index: 10;
+        }
+
+        .bottom-gallery-iframe {
+            width: 100%;
+            height: 90vh;
+            border: none;
+            display: block;
+            margin-top: 0;
+        }
+
+        .map-iframe {
+            width: 100%;
+            height: 260px; 
+            border: none;
+            display: block;
+            margin-top: 20px;
+        }
+
+        .social-iframe {
+            width: 100%;
+            height: 20vh;
+            border: none;
+            display: block;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        .highfive-iframe {
+            width: 100%;
+            max-width: 250px;
+            height: 18vh;
+            min-height: 140px;
+            border: none;
+            display: block;
+            margin: -5px auto 10px auto;
+        }
+
+        .footer {
+            width: 100%;
+            text-align: center;
+            padding: 40px 20px;
+            color: #000000;
+            font-size: 14px;
+            font-weight: 300;
+            letter-spacing: 1px;
+            opacity: 0.8;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            #gallery-section {
+                padding-top: 40px;
+                padding-bottom: 100px;
+            }
+
+            .ig-caption {
+                font-size: 20px;
+                margin: 20px 0 10px 0;
+            }
+
+            .ig-iframe { 
+                height: 65vh; 
+                margin-bottom: -45vh;
+            }
+            
+            .coverup-iframe { 
+                height: 65vh; 
+                min-height: 550px; 
+                margin-top: 0;
+            }
+
+            .bottom-gallery-iframe {
+                height: 75vh;
+                margin-top: 0;
+            }
+
+            .map-iframe {
+                height: 230px; 
+                margin-top: 10px;
+            }
+
+            .social-iframe {
+                height: 15vh;
+                margin-top: 5px;
+            }
+
+            .highfive-iframe {
+                height: 15vh;
+                min-height: 120px;
+                max-width: 200px;
+                margin-top: -5px;
+            }
+        }
+
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+            z-index: 4000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .popup-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .popup-content {
+            position: relative;
+            width: 90%;
+            max-width: 400px;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        #spinwheel-popup .popup-content {
+            height: 620px;
+            background: transparent;
+            border: none;
+            box-shadow: none;
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 24px;
+            font-weight: 600;
+            color: #000;
+            background: rgba(255, 255, 255, 0.9);
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 4010;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .spinwheel-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+            border-radius: 20px;
+        }
+
+        .auth-container {
+            padding: 40px 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .auth-title {
+            text-align: center;
+            font-weight: 600;
+            font-size: 22px;
+            margin-bottom: 5px;
+        }
+
+        .auth-desc {
+            text-align: center;
+            font-size: 13px;
+            line-height: 1.5;
+            opacity: 0.8;
+            margin-bottom: 15px;
+        }
+
+        .auth-input {
+            width: 100%;
+            padding: 14px 20px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.6);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            outline: none;
+            transition: border 0.3s;
+            margin-bottom: 15px;
+        }
+
+        .auth-input:focus {
+            border: 1px solid rgba(0, 0, 0, 0.4);
+        }
+
+        .auth-btn {
+            width: 100%;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 50px;
+            background: #000000;
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .auth-btn:active { transform: scale(0.98); }
+
+        .auth-toggle {
+            text-align: center;
+            font-size: 13px;
+            margin-top: 15px;
+        }
+
+        .auth-toggle a {
+            color: #000;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            z-index: 4000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.3s;
+        }
+
+        .modal-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background: #fff;
+            width: 90%;
+            max-width: 400px;
+            border-radius: 16px;
+            padding: 24px;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 12px;
+            right: 16px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .booking-card {
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 12px;
+            margin-bottom: 10px;
+            background: #f9fafb;
+        }
+
+        .booking-card strong {
+            display: block;
+            color: #111827;
+            margin-bottom: 4px;
+        }
+
+        .booking-card span {
+            font-size: 12px;
+            color: #4b5563;
+            display: block;
+        }
+
+        .booking-card .status {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 10px;
+            font-weight: bold;
+            margin-top: 8px;
+        }
+
+        .status-Pending { background: #fef3c7; color: #d97706; }
+        .status-Approved { background: #d1fae5; color: #059669; }
+        .status-Done { background: #e0e7ff; color: #4f46e5; }
+        .status-Cancelled { background: #fee2e2; color: #dc2626; }
+
+        /* ========================================= */
+        /* COMPACT GALLERY CSS */
+        /* ========================================= */
+        :root{ --compact-h: 420px; }
+        @media (max-width:520px){ :root{ --compact-h: 360px; } }
+
+        .compact-wrap { max-width:1100px; margin:0 auto; padding:12px; font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif; }
+        .compact-shell { border:1px solid rgba(255,255,255,.10); border-radius:16px; overflow:hidden; background:#000; color:#eaeaea; }
+
+        .compact-top {
+          height:44px; display:flex; align-items:center; justify-content:space-between;
+          padding:0 12px; border-bottom:1px solid rgba(255,255,255,.06);
+        }
+        .compact-title { font-size:12px; letter-spacing:.18em; color:#cfcfcf; text-transform:uppercase; }
+        .compact-count { font-size:12px; letter-spacing:.18em; color:#9a9a9a; }
+
+        .compact-stage {
+          position:relative; height:var(--compact-h);
+          display:flex; align-items:center; justify-content:center;
+          overflow:hidden;
+        }
+        .compact-stage::before {
+          content:""; position:absolute; inset:0;
+          background-image: var(--bg);
+          background-size:cover; background-position:center;
+          filter: blur(18px); transform: scale(1.1); opacity:.28;
+        }
+        .compact-stage::after {
+          content:""; position:absolute; inset:0;
+          background: radial-gradient(transparent 0%, rgba(0,0,0,.35) 60%, rgba(0,0,0,.70) 100%);
+        }
+        .compact-main {
+          position:relative; z-index:2;
+          width:100%; height:100%;
+          object-fit:contain;
+          opacity:0; transition:opacity .35s ease;
+        }
+        .compact-main.show { opacity:1; }
+
+        .compact-nav {
+          position:absolute; z-index:3;
+          top:50%; transform:translateY(-50%);
+          width:44px; height:44px; border-radius:14px;
+          border:1px solid rgba(255,255,255,.18);
+          background:rgba(255,255,255,.08);
+          color:#fff; font-size:24px; cursor:pointer;
+          display:flex; align-items:center; justify-content:center;
+          padding-bottom: 3px;
+        }
+        .compact-nav.left { left:10px; }
+        .compact-nav.right { right:10px; }
+        @media (max-width:520px){ .compact-nav{display:none} }
+
+        .compact-thumbs {
+          display:flex; gap:8px; padding:10px; overflow-x:auto;
+          border-top:1px solid rgba(255,255,255,.06); background:#0b0b0b;
+        }
+        .compact-thumb {
+          width:56px; height:42px; flex:0 0 auto; border-radius:10px; overflow:hidden;
+          border:1px solid rgba(255,255,255,.12);
+          opacity:.55; cursor:pointer;
+        }
+        .compact-thumb.active { opacity:1; border-color:#9a9a9a; }
+        .compact-thumb img { width:100%; height:100%; object-fit:cover; }
+
+        .compact-lb {
+          position:fixed; inset:0;
+          background:rgba(0,0,0,.94);
+          display:none; align-items:center; justify-content:center;
+          z-index:99999;
+          padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+        }
+        .compact-lb.show { display:flex; }
+
+        .compact-lbStage {
+          position:relative;
+          width:100vw; height:100vh;
+          display:flex; align-items:center; justify-content:center;
+          overflow:hidden;
+        }
+        .compact-lbStage::before {
+          content:""; position:absolute; inset:0;
+          background-image: var(--lbbg);
+          background-size:cover; background-position:center;
+          filter: blur(22px); transform: scale(1.12);
+          opacity:.22;
+        }
+        .compact-lbStage::after {
+          content:""; position:absolute; inset:0;
+          background: radial-gradient(transparent 0%, rgba(0,0,0,.35) 55%, rgba(0,0,0,.80) 100%);
+        }
+
+        .compact-lbImg {
+          position:relative; z-index:2;
+          width:100vw; height:100vh;
+          object-fit:contain;
+          -webkit-user-select:none; user-select:none;
+          -webkit-touch-callout:none;
+        }
+
+        .compact-lbBtn {
+          position:absolute; z-index:3;
+          width:34px; height:34px;
+          border-radius:10px;
+          border:1px solid rgba(255,255,255,.25);
+          background:rgba(20,20,20,.45);
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
+          color:#fff; font-size:18px; 
+          display:grid; place-items:center;
+          font-family: sans-serif;
+          transition: background 0.3s, transform 0.2s;
+        }
+        .compact-lbBtn:active {
+          transform: scale(0.95);
+        }
+        
+        .compact-lbClose { top: 80px; right: 20px; }
+        .compact-lbPlay { top: 80px; left: 20px; font-size:14px; }
+        .compact-lbNav { top:50%; transform:translateY(-50%); padding-bottom: 3px; font-size: 22px; }
+        .compact-lbPrev { left:calc(14px + env(safe-area-inset-left)); }
+        .compact-lbNext { right:calc(14px + env(safe-area-inset-right)); }
+
+        .compact-lbCount {
+          position:absolute; z-index:3;
+          bottom:calc(16px + env(safe-area-inset-bottom));
+          left:50%; transform:translateX(-50%);
+          font-size:12px; letter-spacing:.18em;
+          color:#d6d6d6; font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;
+          padding:8px 12px; border-radius:999px;
+          border:1px solid rgba(255,255,255,.16);
+          background:rgba(0,0,0,.35);
+          backdrop-filter: blur(10px);
+        }
+        @media (prefers-reduced-motion: reduce){ .compact-main{transition:none} }
+
+        /* ========================================= */
+        /* YENİ ÖDEME YÖNTEMLERİ CSS */
+        /* ========================================= */
+        .payment-row {
+          display: flex;
+          flex-wrap: nowrap; 
+          align-items: center;
+          justify-content: center; 
+          gap: 6px; 
+          width: 100%; 
+          max-width: 98%; 
+          margin: 15px auto 10px auto; 
+          overflow-x: auto; 
+          padding: 8px 4px; 
+          scrollbar-width: none; 
+          -ms-overflow-style: none; 
+        }
+        .payment-row::-webkit-scrollbar {
+          display: none; 
+        }
+        .pay-logo {
+          height: 23px; 
+          padding: 0 8px; 
+          border-radius: 4px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 4px; 
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 10px; 
+          font-weight: 700;
+          background: #f2f2f2;
+          color: #000;
+          box-shadow: 0 2px 5px rgba(0,0,0,.15); 
+          transition: .25s;
+          flex-shrink: 0; 
+        }
+        .pay-logo:hover {
+          transform: scale(1.05); 
+          box-shadow: 0 4px 10px rgba(0,0,0,.2);
+        }
+        
+        .visa { color: #1A1F71; font-style: italic; letter-spacing: 0.5px; padding-left: 11px; padding-right: 11px; }
+        .mc svg { height: 15px; } 
+        .mobilepay { background: #5A78FF; color: #fff; }
+        .klarna { background: #FFB3C7; }
+        .applepay { background: #111; color: #fff; }
+        .apple-icon { width: 10px; height: 10px; fill: #fff; }
+        .nfc { background: #111; color: #fff; }
+        .nfc-icon { width: 12px; height: 12px; }
+        .nfc-icon rect { fill: #fff; }
+        .nfc-icon path { stroke: #fff; }
+    </style>
+</head>
+
+<body>
+    <div id="spinwheel-popup" class="popup-overlay">
+        <div class="popup-content">
+            <span class="popup-close" id="spinwheel-close">&times;</span>
+            <iframe
+                src="https://johnsimsek.github.io/Spinwheel/"
+                title="Voita alennus"
+                class="spinwheel-iframe"
+                loading="lazy">
+            </iframe>
+        </div>
+    </div>
+
+    <div id="auth-popup" class="popup-overlay">
+        <div class="popup-content">
+            <span class="popup-close" id="auth-close">&times;</span>
+
+            <div class="auth-container">
+                <h3 class="auth-title" id="auth-title">Kirjaudu sisään</h3>
+                <p class="auth-desc">Tilaa Ink Vibes -tatuointisähköpostit saadaksesi eksklusiivisia tarjouksia, alennuksia, viimeisimmät uutiset ja inspiroivaa sisältöä sekä tietoa walk-in-päivistä.</p>
+
+                <form id="auth-form">
+                    <input type="text" id="auth-name" placeholder="Koko Nimi" class="auth-input signup-field" style="display: none;">
+                    <input type="tel" id="auth-phone" placeholder="Puhelinnumero" value="+358" class="auth-input signup-field" style="display: none;">
+                    <input type="email" id="auth-email" placeholder="Sähköpostiosoite" class="auth-input" required>
+                    <input type="password" id="auth-pass" placeholder="Salasana" class="auth-input" required>
+
+                    <div style="text-align:right; margin-top:-10px; margin-bottom:15px; font-size:11px;">
+                        <a href="#" onclick="resetPassword(event)" style="color:#666; text-decoration:none;">Unohditko salasanasi?</a>
+                    </div>
+
+                    <button type="submit" class="auth-btn" id="auth-submit-btn">Kirjaudu</button>
+                </form>
+
+                <div class="auth-toggle">
+                    <a href="#" id="auth-toggle-btn">Eikö sinulla ole tiliä? Rekisteröidy tästä</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="profile-popup" class="popup-overlay">
+        <div class="popup-content" style="padding: 30px; height: auto; min-height: 250px;">
+            <span class="popup-close" onclick="document.getElementById('profile-popup').classList.remove('show')">&times;</span>
+
+            <h3 style="text-align:center; margin-top:0; margin-bottom:20px;">Profiili</h3>
+
+            <div id="profile-info" style="font-size:14px; line-height:1.8; margin-bottom:25px; color:#333;"></div>
+
+            <div style="display:flex; flex-direction:column; gap:10px;">
+                <button class="auth-btn" style="margin:0;" onclick="openBookingsFromProfile()">Omat Varaukset</button>
+                <button class="auth-btn" style="margin:0; background:#dc2626;" onclick="logout()">Kirjaudu ulos</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="bookingsModal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="document.getElementById('bookingsModal').classList.remove('show')">&times;</span>
+            <h3 style="margin-top:0;">Omat Varaukset</h3>
+            <div id="bookingsList" style="margin-top:15px;"></div>
+        </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div id="sidebar">
+        <a class="close-btn" id="close-btn" aria-label="Sulje valikko">&times;</a>
+        <a href="https://www.inkyvibestattoo.com/">Etusivu</a>
+        <a href="#" onclick="goToBooking(event)">Ajanvaraus</a>
+        <a href="https://lahjakortti.inkyvibestattoo.com/">Tatuointi Lahjakortti</a>
+        <a href="https://johnsimsek.github.io/Create-your-own-tattoo/">Suunnittele Oma Tatuointisi</a>
+        <a href="https://johnsimsek.github.io/Hintaarvio/">Tatuoinnin Hinta - arvio</a>
+        <a href="https://johnsimsek.github.io/Hoitoohjeet/">Hoito-ohjeet / Blogi</a>
+        <a href="https://johnsimsek.github.io/OTA-YHTEYTT-/">Ota Yhteyttä</a>
+    </div>
+
+    <!-- Header -->
+    <header id="glass-nav">
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <button class="hamburger" id="hamburger-btn" type="button" aria-label="Avaa valikko">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <h1 class="menu-text">
+                <a href="https://www.inkyvibestattoo.com/" style="text-decoration: none; color: inherit; cursor: pointer;">INKY VIBES TATTOO</a>
+            </h1>
+        </div>
+        
+        <a href="#" id="open-auth-bar" title="Profiili" aria-label="Käyttäjäprofiili" style="display: flex; align-items: center; gap: 4px; text-decoration: none; border: none; outline: none;">
+            <svg class="header-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+        </a>
+    </header>
+
+    <main>
+        <section id="animation-container">
+            <iframe
+                src="https://johnsimsek.github.io/Websitecover-video/"
+                class="animation-iframe"
+                title="Inky Vibes Tattoo - Esittelyvideo">
+            </iframe>
+            <div id="bokeh-overlay"></div>
+        </section>
+
+        <section id="gallery-section">
+            <div class="gallery-header">
+                <img src="https://johnsimsek.github.io/Inkyvibes-tattoo-lettering/IMG_2383.JPEG" alt="Inky Vibes Tattoo logo">
+            </div>
+
+            <!-- COMPACT GALLERY -->
+            <div class="compact-wrap">
+              <div class="compact-shell">
+                <div class="compact-top">
+                  <div class="compact-title">INKY VIBES TATTOO</div>
+                  <div class="compact-count" id="compact-count">—</div>
+                </div>
+
+                <div class="compact-stage" id="compact-stage">
+                  <button class="compact-nav left" id="compact-prev" aria-label="Önceki">‹</button>
+                  <img class="compact-main" id="compact-main" src="" alt="" loading="eager" decoding="async">
+                  <button class="compact-nav right" id="compact-next" aria-label="Sonraki">›</button>
+                </div>
+
+                <div class="compact-thumbs" id="compact-thumbs"></div>
+              </div>
+            </div>
+
+            <h2 class="ig-caption">Instagram Stories</h2>
+
+            <iframe src="https://johnsimsek.github.io/Ig-stories-side-by-side-for-blur-background-without-new-tab/" class="ig-iframe" title="Instagram Stories" allowfullscreen loading="lazy"></iframe>
+            
+            <iframe src="https://johnsimsek.github.io/Coveruptexts/" class="coverup-iframe" title="Peitetatuoinnit ja korjaukset" loading="lazy"></iframe>
+            
+            <iframe src="https://johnsimsek.github.io/Gallery-downnnn/" class="bottom-gallery-iframe" title="Tatuointigalleria" loading="lazy"></iframe>
+
+            <iframe src="https://johnsimsek.github.io/Map/" class="map-iframe" title="Inky Vibes Tattoo – Keskikatu 13, Kouvola" loading="lazy"></iframe>
+            
+            <!-- HIGHFIVE ANİMASYONU -->
+            <iframe src="https://johnsimsek.github.io/Highfivv/" class="highfive-iframe" title="Interaktiivinen osio" loading="lazy"></iframe>
+            
+            <!-- ÖDEME YÖNTEMLERİ -->
+            <div class="payment-row">
+              <div class="pay-logo visa">VISA</div>
+              <div class="pay-logo nfc">
+                <svg class="nfc-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="3" y="6.5" width="10.5" height="11" rx="2"/>
+                  <path d="M15.8 9.3c1.2 1.2 1.2 4.2 0 5.4" fill="none" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M18.3 7.6c2 2 2 7 0 9" fill="none" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M20.6 6c3 3 3 10.9 0 13.9" fill="none" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <span>NFC</span>
+              </div>
+              <div class="pay-logo mc">
+                <svg viewBox="0 0 48 30" aria-hidden="true">
+                  <circle cx="18" cy="15" r="12" fill="#EB001B"/>
+                  <circle cx="30" cy="15" r="12" fill="#F79E1B"/>
+                  <circle cx="24" cy="15" r="12" fill="#FF5F00"/>
+                </svg>
+              </div>
+              <div class="pay-logo mobilepay">MobilePay</div>
+              <div class="pay-logo klarna">Klarna</div>
+              <div class="pay-logo applepay">
+                <svg class="apple-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M16.7 13.2c0-2 1.7-2.9 1.8-3-1-1.5-2.6-1.7-3.2-1.7-1.3-.1-2.5.8-3.2.8-.7 0-1.7-.8-2.9-.8-1.5 0-2.9.9-3.6 2.2-1.6 2.7-.4 6.7 1.1 8.9.7 1.1 1.6 2.3 2.8 2.3 1.1 0 1.5-.7 2.9-.7 1.3 0 1.7.7 2.9.7 1.2 0 2-.9 2.7-2 .8-1.2 1.1-2.4 1.1-2.5-.1 0-2.4-.9-2.4-3.5zM14.9 6.7c.6-.8 1-1.8.9-2.9-.9.1-2 .6-2.6 1.4-.6.7-1 1.8-.9 2.8 1 .1 2-.5 2.6-1.3z"/>
+                </svg>
+                <span>Pay</span>
+              </div>
+            </div>
+
+            <!-- SOCIAL MEDIA IFRAME -->
+            <iframe src="https://johnsimsek.github.io/Socialmedia/" class="social-iframe" title="Sosiaalisen median profiilit" loading="lazy"></iframe>
+
+            <footer class="footer">© 2026 - Inky Vibes Tattoo</footer>
+
+        </section>
+    </main>
+
+    <!-- LIGHTBOX -->
+    <div class="compact-lb" id="compact-lb" aria-hidden="true">
+      <div class="compact-lbStage" id="compact-lbStage">
+        <img class="compact-lbImg" id="compact-lbImg" src="" alt="" draggable="false">
+        <button class="compact-lbBtn compact-lbClose" id="compact-lbClose" aria-label="Kapat">✕</button>
+        <button class="compact-lbBtn compact-lbPlay" id="compact-lbPlay" aria-label="Slayt">⏸</button>
+        <button class="compact-lbBtn compact-lbNav compact-lbPrev" id="compact-lbPrev" aria-label="Önceki">‹</button>
+        <button class="compact-lbBtn compact-lbNav compact-lbNext" id="compact-lbNext" aria-label="Sonraki">›</button>
+        <div class="compact-lbCount" id="compact-lbCount">—</div>
+      </div>
+    </div>
+
+    <!-- KIRJAUTUMISEN SYNKRONOINTI 3D-ANIMAATIOON JA RESERVATIOON -->
+    <script>
+        document.body.classList.add('js-enabled');
+
+        const AUTH_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzcwVZTxNs4uSKA1RPU14FkDJRn11jqeIut3_q01O6rR1Cdh4cK64wGj6wvPpMke4qJrw/exec";
+
+        let currentUser = null;
+
+        // 1. Ajanvaraus-sivulta tultaessa tarkistetaan URL'deki session parametresi
+        const urlParams = new URLSearchParams(window.location.search);
+        const sessionParam = urlParams.get('session');
+        
+        if (sessionParam) {
+            try {
+                currentUser = JSON.parse(decodeURIComponent(sessionParam));
+                localStorage.setItem("inky_user", JSON.stringify(currentUser));
+                window.history.replaceState({}, document.title, window.location.pathname);
+            } catch (e) {
+                console.warn("URL session okuma hatası:", e);
+            }
+        }
+
+        // 2. Eğer URL'de yoksa normal localStorage hafızasından oku
+        if (!currentUser) {
+            try {
+                const storedUser = localStorage.getItem("inky_user");
+                if (storedUser) {
+                    currentUser = JSON.parse(storedUser);
+                }
+            } catch (e) {
+                console.warn("Virhe luettaessa käyttäjätietoja:", e);
+            }
+        }
+
+        // Sağ üstteki profil ikonunu (Avatar) giriş durumuna göre güncelleyen fonksiyon
+        function updateHeaderAvatar() {
+            const authBtn = document.getElementById("open-auth-bar");
+            if (currentUser) {
+                const firstName = currentUser.name ? currentUser.name.split(' ')[0] : 'Profiili';
+                authBtn.innerHTML = `
+                    <span style="color: #ffffff; font-size: 13px; font-weight: 600; margin-right: 6px; letter-spacing: 0.5px; text-decoration: none; border: none;">${firstName}</span>
+                    <svg class="header-icon" viewBox="0 0 24 24" aria-hidden="true" style="stroke: #ffffff; transform: scale(1.05);">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                `;
+            } else {
+                authBtn.innerHTML = `
+                    <svg class="header-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                `;
+            }
+        }
+
+        // Sayfa açıldığında ikonu hemen güncelle
+        updateHeaderAvatar();
+        
+        function notifyAnimationIframe() {
+            const iframes = document.querySelectorAll('.animation-iframe');
+            iframes.forEach(iframe => {
+                if (iframe && iframe.contentWindow) {
+                    iframe.contentWindow.postMessage(
+                        { action: "updateLoginState", loggedIn: !!currentUser, user: currentUser },
+                        "*"
+                    );
+                }
+            });
+        }
+        window.addEventListener('load', notifyAnimationIframe);
+
+        // Rezervasyon sayfasına giderken oturum bilgisini URL'ye ekleme fonksiyonu
+        function goToBooking(e) {
+            if (e) e.preventDefault();
+            let targetUrl = "https://ajanvaraus.inkyvibestattoo.com/"; 
+            
+            try {
+                const freshUser = localStorage.getItem("inky_user");
+                if (freshUser) {
+                    currentUser = JSON.parse(freshUser);
+                }
+            } catch(err) {}
+
+            if (currentUser) {
+                const encodedUser = encodeURIComponent(JSON.stringify(currentUser));
+                targetUrl += "?session=" + encodedUser;
+            }
+            
+            window.location.href = targetUrl;
+        }
+
+        function removeIntroBlur() {
+            if (!document.body.classList.contains('is-scrolled')) {
+                document.body.classList.add('is-scrolled');
+                
+                setTimeout(() => {
+                    const overlay = document.getElementById('bokeh-overlay');
+                    if (overlay) overlay.style.display = 'none';
+                }, 800);
+            }
+        }
+        
+        const bokehOverlay = document.getElementById('bokeh-overlay');
+        if (bokehOverlay) {
+            bokehOverlay.addEventListener('touchstart', removeIntroBlur, { passive: true, once: true });
+            bokehOverlay.addEventListener('click', removeIntroBlur, { passive: true, once: true });
+        }
+        window.addEventListener('scroll', removeIntroBlur, { passive: true, once: true });
+
+        document.getElementById("hamburger-btn").addEventListener("click", () => {
+            document.getElementById("sidebar").classList.add("open");
+        });
+
+        document.getElementById("close-btn").addEventListener("click", () => {
+            document.getElementById("sidebar").classList.remove("open");
+        });
+
+        const spinwheelPopup = document.getElementById("spinwheel-popup");
+        let interactionDetected = false;
+
+        function showPopup() {
+            try {
+                const lastShown = localStorage.getItem("spinwheel_last_shown");
+                const now = new Date().getTime();
+
+                if (!lastShown || now - lastShown > 86400000) {
+                    spinwheelPopup.classList.add("show");
+                    localStorage.setItem("spinwheel_last_shown", now);
+                }
+            } catch (e) {
+                console.warn("Spinwheel tallennusvirhe:", e);
+                spinwheelPopup.classList.add("show");
+            }
+        }
+
+        function handleInteraction() {
+            if (!interactionDetected) {
+                interactionDetected = true;
+                setTimeout(showPopup, 30000);
+
+                ["scroll", "click", "touchstart", "mousemove"].forEach(evt => {
+                    window.removeEventListener(evt, handleInteraction);
+                });
+            }
+        }
+
+        ["scroll", "click", "touchstart", "mousemove"].forEach(evt => {
+            window.addEventListener(evt, handleInteraction);
+        });
+
+        document.getElementById("spinwheel-close").addEventListener("click", () => {
+            spinwheelPopup.classList.remove("show");
+        });
+
+        const authPopup = document.getElementById("auth-popup");
+        const profilePopup = document.getElementById("profile-popup");
+        const authPhone = document.getElementById("auth-phone");
+
+        authPhone.addEventListener("input", function() {
+            if (!this.value.startsWith("+358")) {
+                this.value = "+358";
+            }
+        });
+
+        document.getElementById("open-auth-bar").addEventListener("click", (e) => {
+            e.preventDefault();
+
+            try {
+                const storedUser = localStorage.getItem("inky_user");
+                if (storedUser) {
+                    currentUser = JSON.parse(storedUser);
+                } else {
+                    currentUser = null;
+                }
+            } catch (e) {
+                currentUser = null;
+            }
+
+            if (currentUser) {
+                let p = String(currentUser.phone || "");
+
+                if (p && !p.startsWith("+")) {
+                    p = "+" + p;
+                }
+
+                document.getElementById("profile-info").innerHTML = `
+                    <strong>Koko Nimi:</strong> ${currentUser.name}<br>
+                    <strong>Sähköpostiosoite:</strong> ${currentUser.email}<br>
+                    <strong>Puhelinnumero:</strong> ${p || "-"}
+                `;
+
+                profilePopup.classList.add("show");
+            } else {
+                authPopup.classList.add("show");
+            }
+        });
+
+        document.getElementById("auth-close").addEventListener("click", () => {
+            authPopup.classList.remove("show");
+        });
+
+        function logout() {
+            try {
+                localStorage.removeItem("inky_user");
+            } catch (e) {
+                console.warn("Uloskirjautumisvirhe:", e);
+            }
+            currentUser = null;
+            updateHeaderAvatar();
+            notifyAnimationIframe();
+            profilePopup.classList.remove("show");
+            alert("Olet kirjautunut ulos.");
+        }
+
+        function openBookingsFromProfile() {
+            profilePopup.classList.remove("show");
+            fetchMyBookings();
+        }
+
+        let isLogin = true;
+        const authToggleBtn = document.getElementById("auth-toggle-btn");
+        const signupFields = document.querySelectorAll(".signup-field");
+
+        authToggleBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            isLogin = !isLogin;
+
+            if (isLogin) {
+                document.getElementById("auth-title").innerText = "Kirjaudu sisään";
+                document.getElementById("auth-submit-btn").innerText = "Kirjaudu";
+                authToggleBtn.innerText = "Eikö sinulla ole tiliä? Rekisteröidy tästä";
+
+                signupFields.forEach(field => {
+                    field.style.display = "none";
+                    field.required = false;
+                });
+            } else {
+                document.getElementById("auth-title").innerText = "Luo tili";
+                document.getElementById("auth-submit-btn").innerText = "Rekisteröidy";
+                authToggleBtn.innerText = "Onko sinulla jo tili? Kirjaudu sisään";
+
+                signupFields.forEach(field => {
+                    field.style.display = "block";
+                    field.required = true;
+                });
+            }
+        });
+
+        document.getElementById("auth-form").addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const btn = document.getElementById("auth-submit-btn");
+            const originalText = btn.innerText;
+
+            btn.disabled = true;
+            btn.innerText = "Odottaa...";
+
+            const payload = {
+                email: document.getElementById("auth-email").value,
+                password: document.getElementById("auth-pass").value
+            };
+
+            if (!isLogin) {
+                payload.name = document.getElementById("auth-name").value;
+                payload.phone = document.getElementById("auth-phone").value;
+            }
+
+            try {
+                const res = await fetch(AUTH_SCRIPT_URL, {
+                    method: "POST",
+                    body: JSON.stringify({
+                        action: isLogin ? "login" : "signup",
+                        payload: payload
+                    })
+                });
+
+                const data = await res.json();
+
+                if (data.ok) {
+                    if (!isLogin) {
+                        try {
+                            const spinWheelFormData = new FormData();
+                            spinWheelFormData.append("email", payload.email);
+                            
+                            fetch("https://script.google.com/macros/s/AKfycbwYEegtNF44clO31rVT0XQJxSmsqr_FwhY6QvdbvF9n2bJUYUrcKp_Izm3y_OUhHFJcUw/exec", {
+                                method: 'POST',
+                                body: spinWheelFormData,
+                                mode: 'no-cors'
+                            });
+                        } catch (err) {
+                            console.warn("Spin Wheel tallennusvirhe taustalla:", err);
+                        }
+                    }
+                
+                    try {
+                        localStorage.setItem("inky_user", JSON.stringify(data.user));
+                    } catch (storeErr) {
+                        console.warn("Tietojen tallennus epäonnistui:", storeErr);
+                    }
+                    
+                    currentUser = data.user;
+                    updateHeaderAvatar();
+                    notifyAnimationIframe();
+
+                    alert(
+                        isLogin
+                            ? "Tervetuloa takaisin, " + data.user.name + "!"
+                            : "Tili luotu onnistuneesti ☑️"
+                    );
+
+                    authPopup.classList.remove("show");
+                } else {
+                    alert("Virhe: " + data.error);
+                }
+            } catch (err) {
+                alert("Yhteysvirhe. Yritä uudelleen.");
+            }
+
+            btn.disabled = false;
+            btn.innerText = originalText;
+        });
+
+        async function fetchMyBookings() {
+            if (!currentUser) return;
+
+            document.getElementById("bookingsModal").classList.add("show");
+
+            const list = document.getElementById("bookingsList");
+            list.innerHTML = "<p>Ladataan...</p>";
+
+            try {
+                const res = await fetch(AUTH_SCRIPT_URL, {
+                    method: "POST",
+                    body: JSON.stringify({
+                        action: "getMyBookings",
+                        payload: {
+                            customerId: currentUser.id
+                        }
+                    })
+                });
+
+                const data = await res.json();
+
+                if (data.ok) {
+                    if (data.bookings.length === 0) {
+                        list.innerHTML = "<p>Ei varauksia löytynyt.</p>";
+                    } else {
+                        list.innerHTML = data.bookings.map(b => {
+                            const formatDate = (str) => {
+                                if (!str) return "";
+                                if (str.includes("T")) {
+                                    const d = new Date(str);
+                                    if (!isNaN(d)) {
+                                        return String(d.getDate()).padStart(2, "0") + "." + String(d.getMonth() + 1).padStart(2, "0") + "." + d.getFullYear();
+                                    }
+                                }
+                                return str;
+                            };
+
+                            const typeText = (b.type === "Tattoo" || b.type === "tattoo") ? "Tatuointi Aika" : "Tatuointi Suunnittelu Aika";
+
+                            return `
+                                <div class="booking-card">
+                                    <strong>Varaustyyppi</strong>
+                                    <span style="margin-bottom:8px;">${typeText}</span>
+                                    <strong>Päivämäärä</strong>
+                                    <span style="margin-bottom:8px;">${formatDate(b.date)}</span>
+                                    <span class="status status-Approved">Approved</span>
+                                </div>
+                            `;
+                        }).join("");
+                    }
+                } else {
+                    list.innerHTML = "<p>Virhe ladattaessa varauksia.</p>";
+                }
+            } catch (err) {
+                list.innerHTML = "<p>Yhteysvirhe.</p>";
+            }
+        }
+
+        async function resetPassword(e) {
+            e.preventDefault();
+
+            const emailInput = document.getElementById("auth-email").value.trim();
+
+            if (!emailInput) {
+                alert("Kirjoita sähköpostiosoitteesi ylempään kenttään ensin ja paina 'Unohditko salasanasi?'.");
+                return;
+            }
+
+            const btn = document.getElementById("auth-submit-btn");
+            const originalText = btn.innerText;
+
+            btn.innerText = "Lähetetään...";
+            btn.disabled = true;
+
+            try {
+                const res = await fetch(AUTH_SCRIPT_URL, {
+                    method: "POST",
+                    body: JSON.stringify({
+                        action: "resetPassword",
+                        payload: {
+                            email: emailInput
+                        }
+                    })
+                });
+
+                const data = await res.json();
+
+                if (data.ok) {
+                    alert("Uusi salasana on generoitu! Tarkista sähköpostisi (myös roskapostikansio).");
+                } else {
+                    alert("Virhe: " + data.error);
+                }
+            } catch (err) {
+                alert("Yhteysvirhe. Yritä uudelleen.");
+            }
+
+            btn.innerText = originalText;
+            btn.disabled = false;
+        }
+
+        // 3D Animasyon ile iletişim kuran mesaj dinleyicisi
+        window.addEventListener("message", function(event) {
+            let data = event.data;
+            let action = typeof data === "string" ? data : data?.action;
+
+            if (action === "goToBooking" || action === "openBooking") {
+                goToBooking();
+            }
+            else if (action === "checkLoginState") {
+                notifyAnimationIframe();
+            }
+            else if (action === "loginSuccess" && data.user) {
+                currentUser = data.user;
+                localStorage.setItem("inky_user", JSON.stringify(currentUser));
+                updateHeaderAvatar();
+                notifyAnimationIframe(); 
+            }
+            else if (action === "logout") {
+                currentUser = null;
+                localStorage.removeItem("inky_user");
+                updateHeaderAvatar();
+            }
+        });
+    </script>
+    
+    <script>
+      (function() {
+        const CONFIG = {
+          ext: "jpg",
+          probeMax: 500,
+          slideMs: 2500,
+          watchIntervalMs: 4000,
+          reconcileIntervalMs: 30000,
+          imageTimeoutMs: 1800,
+        };
+
+        let IMAGES = [];
+        let idx = 0;
+        let slideTimer = null;
+
+        const stage = document.getElementById('compact-stage');
+        const main  = document.getElementById('compact-main');
+        const count = document.getElementById('compact-count');
+        const thumbs= document.getElementById('compact-thumbs');
+
+        const lb = document.getElementById('compact-lb');
+        const lbStage = document.getElementById('compact-lbStage');
+        const lbImg = document.getElementById('compact-lbImg');
+        const lbClose = document.getElementById('compact-lbClose');
+        const lbPrev = document.getElementById('compact-lbPrev');
+        const lbNext = document.getElementById('compact-lbNext');
+        const lbPlay = document.getElementById('compact-lbPlay');
+        const lbCount = document.getElementById('compact-lbCount');
+
+        function pad2(n){ return String(n).padStart(2, "0"); }
+        function fileFor(i){ return `${pad2(i)}.${CONFIG.ext}`; }
+
+        function setBg(el, varName, src){
+          el.style.setProperty(varName, `url("${src}")`);
+        }
+
+        function stopSlideshow(){
+          if (slideTimer) clearInterval(slideTimer);
+          slideTimer = null;
+          lbPlay.textContent = "▶";
+        }
+
+        function startSlideshow(){
+          stopSlideshow();
+          lbPlay.textContent = "⏸";
+          slideTimer = setInterval(next, CONFIG.slideMs);
+        }
+
+        function toggleSlideshow(){
+          if (slideTimer) stopSlideshow();
+          else startSlideshow();
+        }
+
+        function safeIndex(i){
+          const n = IMAGES.length;
+          if (n === 0) return 0;
+          return (i % n + n) % n;
+        }
+
+        function buildThumbs(){
+          thumbs.innerHTML = "";
+          IMAGES.forEach((src,i)=>{
+            const t = document.createElement('div');
+            t.className = 'compact-thumb';
+            t.innerHTML = `<img src="${src}" alt="" loading="lazy" decoding="async">`;
+            t.onclick = ()=>{ idx=i; render(); };
+            thumbs.appendChild(t);
+          });
+        }
+
+        function render(){
+          if (IMAGES.length === 0){
+            count.textContent = "0 / 0";
+            main.classList.remove('show');
+            main.removeAttribute("src");
+            stage.style.setProperty('--bg', 'none');
+            return;
+          }
+
+          idx = safeIndex(idx);
+          main.classList.remove('show');
+
+          const src = IMAGES[idx];
+          setBg(stage, '--bg', src);
+          count.textContent = `${idx+1} / ${IMAGES.length}`;
+
+          document.querySelectorAll('.compact-thumb').forEach((t,i)=>{
+            t.classList.toggle('active', i===idx);
+          });
+
+          main.onload = ()=> main.classList.add('show');
+          main.src = src;
+
+          if (lb.classList.contains('show')){
+            setBg(lbStage, '--lbbg', src);
+            lbImg.src = src;
+            lbCount.textContent = `${idx+1} / ${IMAGES.length}`;
+          }
+        }
+
+        function next(){ idx = safeIndex(idx+1); render(); }
+        function prev(){ idx = safeIndex(idx-1); render(); }
+
+        document.getElementById('compact-next').onclick = next;
+        document.getElementById('compact-prev').onclick = prev;
+
+        function openLightbox(){
+          if (IMAGES.length === 0) return;
+          const src = IMAGES[idx];
+
+          lb.classList.add('show');
+          lb.setAttribute('aria-hidden', 'false');
+          document.body.style.overflow = "hidden";
+
+          setBg(lbStage, '--lbbg', src);
+          lbImg.src = src;
+          lbCount.textContent = `${idx+1} / ${IMAGES.length}`;
+
+          startSlideshow();
+        }
+
+        function closeLightbox(){
+          lb.classList.remove('show');
+          lb.setAttribute('aria-hidden', 'true');
+          document.body.style.overflow = "";
+          stopSlideshow();
+          lbImg.src = "";
+        }
+
+        main.onclick = openLightbox;
+
+        lbClose.onclick = closeLightbox;
+        lbPrev.onclick = ()=>{ prev(); startSlideshow(); };
+        lbNext.onclick = ()=>{ next(); startSlideshow(); };
+        lbPlay.onclick = toggleSlideshow;
+
+        lbImg.addEventListener('click', (e)=>{ e.stopPropagation(); }, {passive:true});
+        lb.addEventListener('click', (e)=>{ if(e.target === lb) closeLightbox(); });
+
+        document.addEventListener('keydown', (e)=>{
+          if (!lb.classList.contains('show')) return;
+          if (e.key === "Escape") closeLightbox();
+          if (e.key === "ArrowRight") { next(); startSlideshow(); }
+          if (e.key === "ArrowLeft") { prev(); startSlideshow(); }
+          if (e.key === " ") { e.preventDefault(); toggleSlideshow(); }
+        });
+
+        function addSwipe(el, onLeft, onRight){
+          let sx=0, sy=0;
+          el.addEventListener('touchstart', (e)=>{
+            const t = e.touches[0];
+            sx = t.clientX; sy = t.clientY;
+          }, {passive:true});
+
+          el.addEventListener('touchend', (e)=>{
+            const t = e.changedTouches[0];
+            const dx = t.clientX - sx;
+            const dy = t.clientY - sy;
+            if(Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy)){
+              if(dx < 0) onLeft(); else onRight();
+            }
+          }, {passive:true});
+        }
+
+        addSwipe(stage, next, prev);
+        addSwipe(lbStage, ()=>{ next(); startSlideshow(); }, ()=>{ prev(); startSlideshow(); });
+
+        function isRealImage(url){
+          return new Promise((resolve)=>{
+            const img = new Image();
+            const timer = setTimeout(()=>finish(false), CONFIG.imageTimeoutMs);
+
+            function finish(ok){
+              clearTimeout(timer);
+              img.onload = null;
+              img.onerror = null;
+              resolve(ok);
+            }
+
+            img.onload = ()=>finish(true);
+            img.onerror = ()=>finish(false);
+
+            const bust = `cb=${Date.now()}_${Math.random().toString(16).slice(2)}`;
+            img.src = url.includes("?") ? `${url}&${bust}` : `${url}?${bust}`;
+          });
+        }
+
+        async function probeInitialSequential(){
+          const found = [];
+          for (let i = 1; i <= CONFIG.probeMax; i++){
+            const f = fileFor(i);
+            if (await isRealImage(f)) found.push(f);
+            else break;
+          }
+          return found;
+        }
+
+        async function watchForNewImages(){
+          let nextIndex = IMAGES.length + 1;
+          if (nextIndex < 1) nextIndex = 1;
+
+          for (let guard = 0; guard < 10; guard++){
+            const f = fileFor(nextIndex);
+            const ok = await isRealImage(f);
+            if (!ok) break;
+
+            IMAGES.push(f);
+            nextIndex++;
+
+            buildThumbs();
+            render();
+          }
+        }
+
+        async function reconcileDeletionsFromEnd(){
+          while (IMAGES.length > 0){
+            const last = IMAGES[IMAGES.length - 1];
+            const ok = await isRealImage(last);
+            if (ok) break;
+
+            IMAGES.pop();
+            idx = Math.min(idx, Math.max(0, IMAGES.length - 1));
+            buildThumbs();
+            render();
+          }
+        }
+
+        async function init(){
+          IMAGES = await probeInitialSequential();
+          buildThumbs();
+          idx = 0;
+          render();
+
+          setInterval(watchForNewImages, CONFIG.watchIntervalMs);
+          setInterval(reconcileDeletionsFromEnd, CONFIG.reconcileIntervalMs);
+        }
+
+        init();
+      })();
+    </script>
 </body>
 </html>
