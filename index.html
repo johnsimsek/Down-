@@ -201,21 +201,21 @@
         }
 
         #animation-container {
-            height: 200vh;
+            height: 55vh; /* Shorter height to remove blank areas */
+            min-height: 350px;
             width: 100%;
             position: relative;
             background-color: #000000;
-            -webkit-mask-image: none;
-            mask-image: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 60px; /* Space for the fixed header */
         }
 
         .animation-iframe {
             display: block;
             width: 100%;
-            height: 100vh;
-            height: 100svh;
-            position: sticky;
-            top: 0;
+            height: 100%;
             border: none;
         }
 
@@ -224,8 +224,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 100vh;
-            height: 100svh;
+            height: 100%;
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(18px);
             -webkit-backdrop-filter: blur(18px);
@@ -248,7 +247,7 @@
             z-index: 10;
             background: rgba(255, 255, 255, 0.4);
             backdrop-filter: blur(15px);
-            padding-top: 60px;
+            padding-top: 40px;
             padding-bottom: 80px;
         }
 
